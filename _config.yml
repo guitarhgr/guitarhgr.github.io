@@ -105,7 +105,7 @@ search:
 ## repo: git@github.com:guitarhgr/guitarhgr.github.io.git
 deploy:
   type: git
-  repo: git@gitee.com:guitarhgr/guitarhgr.git
+  repo: git@github.com:guitarhgr/guitarhgr.github.io.git
   branch: master
 
 jsonContent:
