@@ -1,8 +1,8 @@
 ---
-title: '[Read-PAL] 02_心理学的研究方法'
+title: '[Read-Psychology] PAL-02_心理学的研究方法'
 date: 2019-12-11 09:06:44
 categories:
-    - [Read, Psychology and Life]
+    - [Read, Psychology, Psychology and Life]
 tags:
     - psychology
 ---
@@ -129,3 +129,11 @@ tags:
 ## 生活中的批判性思维： 为什么数字技术如此重要  
   + 统计呈现的形式对人们对信息作何行动有很大的影响。
   + 数字技术能更好额较少受到统计呈现形式的影响。
+
+# 提示
+
+------
+
+该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[1758575969@qq.com]。
+
+------

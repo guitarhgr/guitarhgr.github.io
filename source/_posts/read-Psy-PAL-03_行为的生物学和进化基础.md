@@ -1,8 +1,8 @@
 ---
-title: '[Read-PAL] 03_行为的生物学和进化基础'
+title: '[Read-Psychology] PAL-03_行为的生物学和进化基础'
 date: 2019-12-11 09:15:28
 categories:
-    - [Read, Psychology and Life]
+    - [Read, Psychology, Psychology and Life]
 tags:
     - psychology
 ---
@@ -86,3 +86,11 @@ tags:
 ## 可塑性和神经发生：变化的大脑
 
 # 生活中的心理学：你的大脑如何确定信任与否
+
+# 提示
+
+------
+
+该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[1758575969@qq.com]。
+
+------

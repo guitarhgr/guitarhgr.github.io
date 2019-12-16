@@ -1,8 +1,8 @@
 ---
-title: '[Read-PAL] 01_生活中的心理学'
+title: '[Read-Psychology] PAL-01_生活中的心理学'
 date: 2019-12-11 08:40:46
 categories:
-    - [Read, Psychology and Life]
+    - [Read, Psychology, Psychology and Life]
 tags:
     - psychology
 ---
@@ -106,3 +106,11 @@ tags:
   4. 思考(Reflect)：在阅读课文过程中，努力将这些材料与已有的知识联系起来。
   5. 重述(Recite)：在阅读和思考每节后，试着尽可能详细地回忆课本的内容。
   6. 复习(Review)：在阅读完整个章节后，复习关键点。
+
+# 提示
+
+------
+
+该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[1758575969@qq.com]。
+
+------
