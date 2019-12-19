@@ -97,6 +97,49 @@ console.log(gays.find('Li', 'Hua')); // ["Li Hua"]
 
 # 重载已有函数
 
+​	函数包装是一种封装函数逻辑的技巧，用于在单个步骤内重载创建新函数或继承函数。最有价值的场景是，在重载一些已经存在的函数时，同时保持原始函数在被包装后依然能够有效使用。
+
+​	例如Prototype's的readAttribute()方法：
+
+```typescript
+/**
+ * 包装函数
+ * @param obj 包装对象
+ * @param fnName 方法名
+ * @param fn 方法
+ */
+const wrap = (obj: Object, fnName: string, fn: Function) => {
+    const originFn: Function = obj[fnName];
+
+    return obj[fnName] = function () {
+        return fn.apply(
+            this,
+            [originFn.bind(this)].concat(
+                Array.prototype.slice.call(arguments)
+            )
+        )
+    }
+};
+
+const obj = {
+    readAttribute: (a: number, b?: number) => {
+        console.log(`${a}::${b}`);
+    }
+};
+
+wrap(obj, 'readAttribute', (originFn: Function, a: number, b: number) => {
+    !b ? console.log(`wrapped ${a}::${b} `) :
+         originFn(a, b);
+    
+});
+
+obj.readAttribute(1);
+```
+
+该函数实现了对一个已经存在函数的重写，取而代之的是一个新函数。但这个新函数仍然可以访问原有函数提供的方法。这意味着，一个函数可以很安全的被重载，并同时仍然保留原有的功能。
+
+
+
 # 提示
 
 ------
