@@ -3,6 +3,7 @@ title: '[Code-JS] 定时器管理器'
 date: 2019-12-19 16:15:02
 tags:
     - JavaScript
+    - TypeScript
 categories:
     - [Code, JavaScript]
 ---

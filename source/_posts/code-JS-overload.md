@@ -3,6 +3,7 @@ title: '[Code-JS] 函数重载'
 date: 2019-12-16 10:49:48
 tags:
     - JavaScript
+    - TypeScript
 categories:
     - [Code, JavaScript]
 ---
