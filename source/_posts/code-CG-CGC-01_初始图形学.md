@@ -37,7 +37,7 @@ categories:
 
 ### 相关学科图
 
-![相关学科图](https://raw.githubusercontent.com/guitarhgr/imagecloud/master/images/code-CG-CGC-01_img01.png)
+![相关学科图](https://raw.githubusercontent.com/guitarhgr/imagecloud/master/images/Code/CG/CGC/01_01.png)
 
 ## 发展历史
 

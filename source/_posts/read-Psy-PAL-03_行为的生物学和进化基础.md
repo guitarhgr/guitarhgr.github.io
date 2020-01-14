@@ -13,7 +13,7 @@ tags:
     自然选择的理论认为，生物机体适应生存环境，只要这种适应性变异发生了，就会比那些适应性差的个体产生更多后代。久而久之，那些具有适应特征的有机体的数量就会比不具有这些特征的有机体多。用进化论的术语来说，个体的成功与否取决与其后代的数量。 
 <!--more-->
 + 基因型和表型  
-  ![自然选择如何发生](https://raw.githubusercontent.com/guitarhgr/imagecloud/master/images/read_pal_3_01.png) 
+  ![自然选择如何发生](https://raw.githubusercontent.com/guitarhgr/imagecloud/master/images/Read/Pshchology/Psychology_and_Life/03_01.png) 
 
 + 人类的进化
     在人类进化中，自然选择促进了两大适应性进化：
