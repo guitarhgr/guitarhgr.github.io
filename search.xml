@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>[Code-CG] CGC-02_01_浅析图形学</title>
+    <url>/2020/01/13/code-CG-CGC-02_01_%E6%B5%85%E6%9E%90%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
+    <content><![CDATA[<h1 id="计算机图形系统的功能"><a href="#计算机图形系统的功能" class="headerlink" title="计算机图形系统的功能"></a>计算机图形系统的功能</h1><ul>
+<li>计算</li>
+<li>存储</li>
+<li>输入</li>
+<li>输出</li>
+<li>交互</li>
+</ul>
+<h1 id="计算机图形系统的组成"><a href="#计算机图形系统的组成" class="headerlink" title="计算机图形系统的组成"></a>计算机图形系统的组成</h1><h1 id="图形硬件"><a href="#图形硬件" class="headerlink" title="图形硬件"></a>图形硬件</h1><h1 id="图形软件"><a href="#图形软件" class="headerlink" title="图形软件"></a>图形软件</h1>]]></content>
+      <categories>
+        <category>Code</category>
+        <category>CG</category>
+        <category>Computer Graphics Course</category>
+      </categories>
+      <tags>
+        <tag>Computer Graphics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Code-CG] CGC-01_初始图形学</title>
     <url>/2019/12/14/code-CG-CGC-01_%E5%88%9D%E5%A7%8B%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
     <content><![CDATA[<h1 id="计算机图形学"><a href="#计算机图形学" class="headerlink" title="计算机图形学"></a>计算机图形学</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>研究怎样利用计算机来显示，生成和处理图形的原理，方法和技术的一门学科。</p>
@@ -44,30 +64,10 @@
 <li>硬件厂商将光线追踪加速技术、人工智能硬件及可编程着色技术集于同一GPU 中。</li>
 </ul>
 <h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
-<p>该文章是学习《计算机图形学-华中科技大学》万琳等老师讲解的课程笔记，里面内容都是来自于这门课程，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#x37;&#53;&#56;&#53;&#55;&#53;&#x39;&#x36;&#57;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#x31;&#x37;&#53;&#56;&#53;&#55;&#53;&#x39;&#x36;&#57;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a>]。</p>
+<p>该文章是学习《计算机图形学-华中科技大学》万琳等老师讲解的课程笔记，里面内容都是来自于这门课程，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#49;&#x37;&#53;&#56;&#x35;&#x37;&#53;&#57;&#54;&#57;&#x40;&#x71;&#113;&#46;&#99;&#111;&#x6d;">&#49;&#x37;&#53;&#56;&#x35;&#x37;&#53;&#57;&#54;&#57;&#x40;&#x71;&#113;&#46;&#99;&#111;&#x6d;</a>]。</p>
 <p>还有老师讲的很好，真心建议自己去看这门课程<a href="https://www.icourse163.org/course/HUST-1003636001">https://www.icourse163.org/course/HUST-1003636001</a>，</p>
 <hr>
 ]]></content>
-      <categories>
-        <category>Code</category>
-        <category>CG</category>
-        <category>Computer Graphics Course</category>
-      </categories>
-      <tags>
-        <tag>Computer Graphics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Code-CG] CGC-02_01_浅析图形学</title>
-    <url>/2020/01/13/code-CG-CGC-02_01_%E6%B5%85%E6%9E%90%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
-    <content><![CDATA[<h1 id="计算机图形系统的功能"><a href="#计算机图形系统的功能" class="headerlink" title="计算机图形系统的功能"></a>计算机图形系统的功能</h1><ul>
-<li>计算</li>
-<li>存储</li>
-<li>输入</li>
-<li>输出</li>
-<li>交互</li>
-</ul>
-<h1 id="计算机图形系统的组成"><a href="#计算机图形系统的组成" class="headerlink" title="计算机图形系统的组成"></a>计算机图形系统的组成</h1><h1 id="图形硬件"><a href="#图形硬件" class="headerlink" title="图形硬件"></a>图形硬件</h1><h1 id="图形软件"><a href="#图形软件" class="headerlink" title="图形软件"></a>图形软件</h1>]]></content>
       <categories>
         <category>Code</category>
         <category>CG</category>
@@ -99,7 +99,7 @@
 <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> asyncQueue = <span class="keyword">new</span> asyncQueue(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">asyncQueue(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;test1&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">asyncQueue(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;test2&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">asyncQueue(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;test3&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
-<p>该文章是学习《JavaScript Ninja》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#x37;&#53;&#x38;&#53;&#x37;&#x35;&#x39;&#54;&#x39;&#64;&#113;&#113;&#46;&#x63;&#111;&#x6d;">&#x31;&#x37;&#53;&#x38;&#53;&#x37;&#x35;&#x39;&#54;&#x39;&#64;&#113;&#113;&#46;&#x63;&#111;&#x6d;</a>]。</p>
+<p>该文章是学习《JavaScript Ninja》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#55;&#x35;&#56;&#53;&#x37;&#x35;&#x39;&#x36;&#x39;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#x31;&#55;&#x35;&#56;&#53;&#x37;&#x35;&#x39;&#x36;&#x39;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a>]。</p>
 <hr>
 ]]></content>
       <categories>
@@ -135,8 +135,31 @@
 
 <p>该函数实现了对一个已经存在函数的重写，取而代之的是一个新函数。但这个新函数仍然可以访问原有函数提供的方法。这意味着，一个函数可以很安全的被重载，并同时仍然保留原有的功能。</p>
 <h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
-<p>该文章是学习《JavaScript Ninja》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#49;&#55;&#x35;&#56;&#x35;&#x37;&#53;&#57;&#x36;&#x39;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#49;&#55;&#x35;&#56;&#x35;&#x37;&#53;&#57;&#x36;&#x39;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;</a>]。</p>
+<p>该文章是学习《JavaScript Ninja》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#55;&#53;&#56;&#53;&#55;&#53;&#x39;&#x36;&#x39;&#64;&#x71;&#113;&#x2e;&#x63;&#x6f;&#x6d;">&#x31;&#55;&#53;&#56;&#53;&#55;&#53;&#x39;&#x36;&#x39;&#64;&#x71;&#113;&#x2e;&#x63;&#x6f;&#x6d;</a>]。</p>
 <hr>
+]]></content>
+      <categories>
+        <category>Code</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>TypeScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Code-JS] 定时器管理器</title>
+    <url>/2019/12/19/code-JS-timermgr/</url>
+    <content><![CDATA[<h1 id="为什么需要一个定时器管理器？"><a href="#为什么需要一个定时器管理器？" class="headerlink" title="为什么需要一个定时器管理器？"></a>为什么需要一个定时器管理器？</h1><p>保留大量定时器的引用，会干扰浏览器的运行。增加浏览器的垃圾回收任务发生的可能性(垃圾回收就是浏览器遍历其分配过的内存，并试图删除没有任何应用的未使用对象的过程)。有些浏览器页面上的动画可能出现卡顿。</p>
+<span id="more"></span>
+
+<h1 id="使用定时器管理器的好处"><a href="#使用定时器管理器的好处" class="headerlink" title="使用定时器管理器的好处"></a>使用定时器管理器的好处</h1><ul>
+<li>每个页面(整个项目)在同一时间只需要运行一个定时器</li>
+<li>可以根据需要暂停/恢复定时器</li>
+</ul>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>把要执行所有的方法都添加到一个列表里面，由一个定时器去驱动。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @classdesc 定时器管理器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimerMgr</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 时间间隔(毫秒)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _timeStep: <span class="built_in">number</span> = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 是否运行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _isRunning: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 是否暂停</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _isPaused: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 定时器id</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _timer: <span class="built_in">number</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 执行方法列表</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _funcList: <span class="built_in">Function</span>[] = [];</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param </span>timeStep 时间间隔(默认为0)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="title">constructor</span> (<span class="params">timeStep: <span class="built_in">number</span> = <span class="number">0</span></span>) &#123;</span><br><span class="line">        <span class="built_in">this</span>._timeStep = timeStep;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param </span>执行方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    add = <span class="function">(<span class="params">func: <span class="built_in">Function</span></span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._funcList.push(func);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>._isRunning || <span class="built_in">this</span>._isPaused) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.run();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 开始</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    start = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._isPaused = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 运行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    run = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._timer &amp;&amp; <span class="built_in">clearTimeout</span>(<span class="built_in">this</span>._timer);</span><br><span class="line">        <span class="built_in">this</span>._timer = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>._isPaused) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断是否存在执行的方法列表</span></span><br><span class="line">        <span class="keyword">if</span> (!<span class="built_in">this</span>._funcList.length) &#123;</span><br><span class="line">            <span class="built_in">this</span>._isRunning = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>._isRunning = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历方法列表执行添加的方法</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>._funcList.length; i++) &#123;</span><br><span class="line">            <span class="keyword">let</span> func:<span class="built_in">Function</span> = <span class="built_in">this</span>._funcList[i];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 如果有返回值为false则删除</span></span><br><span class="line">            <span class="keyword">if</span> (func() === <span class="literal">false</span>) &#123;</span><br><span class="line">                <span class="built_in">this</span>._funcList.splice(i, <span class="number">1</span>);</span><br><span class="line">                i--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            func = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>._timer = <span class="built_in">setTimeout</span>(<span class="built_in">this</span>.run, <span class="built_in">this</span>._timeStep);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 暂停</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    stop = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._isPaused = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 清除</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    clear = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._timer &amp;&amp; <span class="built_in">clearTimeout</span>(<span class="built_in">this</span>._timer);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>._timer = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">this</span>._funcList = [];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> timerMgr = <span class="keyword">new</span> TimerMgr();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// console.log() 1-10</span></span><br><span class="line">timerMgr.add(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (count &gt; <span class="number">10</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`count:: <span class="subst">$&#123;count&#125;</span>`</span>);</span><br><span class="line">    count++</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一直执行</span></span><br><span class="line">timerMgr.add(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;loop&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Code</category>
@@ -211,6 +234,18 @@
 
 
 
+<h2 id="Linx的应用"><a href="#Linx的应用" class="headerlink" title="Linx的应用"></a>Linx的应用</h2><h4 id="企业环境"><a href="#企业环境" class="headerlink" title="企业环境"></a>企业环境</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 网络服务器</span><br><span class="line">2. 关键任务的应用(金融数据库、大型企业网络环境)</span><br><span class="line">3. 学术机构的高效能运算任务</span><br></pre></td></tr></table></figure>
+
+<h4 id="个人环境"><a href="#个人环境" class="headerlink" title="个人环境"></a>个人环境</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 桌面计算机</span><br><span class="line">2. 手持系统(PDA、手机等)</span><br><span class="line">3. 嵌入式系统</span><br></pre></td></tr></table></figure>
+
+<h4 id="云端应用"><a href="#云端应用" class="headerlink" title="云端应用"></a>云端应用</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 云程序</span><br><span class="line">2. 端设备</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Linux学习路线"><a href="#Linux学习路线" class="headerlink" title="Linux学习路线"></a>Linux学习路线</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 计算机概论与硬件相关知识</span><br><span class="line">2. Linux的安装与指令</span><br><span class="line">3. Linux操作系统的基础技能</span><br><span class="line">4. vi文本编辑器</span><br><span class="line">5. Shell与Shell Script的学习</span><br><span class="line">6. 会软件管理员</span><br><span class="line">7. 计算机网络基础</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="简答"><a href="#简答" class="headerlink" title="简答"></a>简答</h2><ol>
 <li><p>你在你的主机上面安装了一张网络卡，但是开机之后，系统却无法使用，你确定网络卡是好的，那么可能的问题出在哪里？该如何解决？</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">因为所有的硬件都没有问题，所以问题可能出在系统的核心(kernel)不支持这张网络卡。</span><br><span class="line">解决的方法：</span><br><span class="line">	(1) 到网络卡的开发商网站；</span><br><span class="line">	(2) 下载支持你主机操作系统的驱动程序;</span><br><span class="line">	(3) 安装网卡驱动程序后，就可以使用了。</span><br></pre></td></tr></table></figure></li>
@@ -250,7 +285,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1) 借由Minix操作系统开发的Unix Like，没有版权的纠纷；</span><br><span class="line">(2) 借助于CNU计划所提供的各项工具软件，gcc&#x2F;bash等；</span><br><span class="line">(3) 借由Internet广为流传；</span><br><span class="line">(4) 借由支持POSIX标准，让核心能够适合所有软件的开发；</span><br><span class="line">(5) Linus Torvalds强调务实，虚拟团队的自然形成！</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
-<p>该笔记是摘抄自《鸟哥的Linux私房菜》，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#49;&#55;&#x35;&#x38;&#53;&#x37;&#53;&#x39;&#54;&#57;&#64;&#x71;&#x71;&#x2e;&#99;&#111;&#109;">&#49;&#55;&#x35;&#x38;&#53;&#x37;&#53;&#x39;&#54;&#57;&#64;&#x71;&#x71;&#x2e;&#99;&#111;&#109;</a>]。原内容来自<a href="http://linux.vbird.org/linux_basic/0105computers.php#chipset">鸟哥的Linux私房菜</a></p>
+<p>该笔记是摘抄自《鸟哥的Linux私房菜》，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#49;&#55;&#x35;&#x38;&#x35;&#55;&#x35;&#57;&#54;&#x39;&#64;&#x71;&#113;&#46;&#99;&#111;&#109;">&#49;&#55;&#x35;&#x38;&#x35;&#55;&#x35;&#57;&#54;&#x39;&#64;&#x71;&#113;&#46;&#99;&#111;&#109;</a>]。原内容来自<a href="http://linux.vbird.org/linux_basic/0105computers.php#chipset">鸟哥的Linux私房菜</a></p>
 <hr>
 ]]></content>
       <categories>
@@ -271,7 +306,7 @@
 
 
 <h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
-<p>该笔记是摘抄自《鸟哥的Linux私房菜》，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#x37;&#53;&#56;&#53;&#x37;&#53;&#x39;&#x36;&#57;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;">&#x31;&#x37;&#53;&#56;&#53;&#x37;&#53;&#x39;&#x36;&#57;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;</a>]。原内容来自<a href="http://linux.vbird.org/linux_basic/0105computers.php#chipset">鸟哥的Linux私房菜</a></p>
+<p>该笔记是摘抄自《鸟哥的Linux私房菜》，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#x37;&#x35;&#x38;&#53;&#x37;&#x35;&#57;&#54;&#x39;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;">&#x31;&#x37;&#x35;&#x38;&#53;&#x37;&#x35;&#57;&#54;&#x39;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;</a>]。原内容来自<a href="http://linux.vbird.org/linux_basic/0105computers.php#chipset">鸟哥的Linux私房菜</a></p>
 <hr>
 ]]></content>
       <categories>
@@ -281,29 +316,6 @@
       </categories>
       <tags>
         <tag>鸟哥的Linux私房菜</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Code-JS] 定时器管理器</title>
-    <url>/2019/12/19/code-JS-timermgr/</url>
-    <content><![CDATA[<h1 id="为什么需要一个定时器管理器？"><a href="#为什么需要一个定时器管理器？" class="headerlink" title="为什么需要一个定时器管理器？"></a>为什么需要一个定时器管理器？</h1><p>保留大量定时器的引用，会干扰浏览器的运行。增加浏览器的垃圾回收任务发生的可能性(垃圾回收就是浏览器遍历其分配过的内存，并试图删除没有任何应用的未使用对象的过程)。有些浏览器页面上的动画可能出现卡顿。</p>
-<span id="more"></span>
-
-<h1 id="使用定时器管理器的好处"><a href="#使用定时器管理器的好处" class="headerlink" title="使用定时器管理器的好处"></a>使用定时器管理器的好处</h1><ul>
-<li>每个页面(整个项目)在同一时间只需要运行一个定时器</li>
-<li>可以根据需要暂停/恢复定时器</li>
-</ul>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>把要执行所有的方法都添加到一个列表里面，由一个定时器去驱动。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @classdesc 定时器管理器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimerMgr</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 时间间隔(毫秒)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _timeStep: <span class="built_in">number</span> = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 是否运行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _isRunning: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 是否暂停</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _isPaused: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 定时器id</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _timer: <span class="built_in">number</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 执行方法列表</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> _funcList: <span class="built_in">Function</span>[] = [];</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param </span>timeStep 时间间隔(默认为0)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="title">constructor</span> (<span class="params">timeStep: <span class="built_in">number</span> = <span class="number">0</span></span>) &#123;</span><br><span class="line">        <span class="built_in">this</span>._timeStep = timeStep;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param </span>执行方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    add = <span class="function">(<span class="params">func: <span class="built_in">Function</span></span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._funcList.push(func);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>._isRunning || <span class="built_in">this</span>._isPaused) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.run();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 开始</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    start = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._isPaused = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 运行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    run = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._timer &amp;&amp; <span class="built_in">clearTimeout</span>(<span class="built_in">this</span>._timer);</span><br><span class="line">        <span class="built_in">this</span>._timer = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>._isPaused) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断是否存在执行的方法列表</span></span><br><span class="line">        <span class="keyword">if</span> (!<span class="built_in">this</span>._funcList.length) &#123;</span><br><span class="line">            <span class="built_in">this</span>._isRunning = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>._isRunning = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历方法列表执行添加的方法</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>._funcList.length; i++) &#123;</span><br><span class="line">            <span class="keyword">let</span> func:<span class="built_in">Function</span> = <span class="built_in">this</span>._funcList[i];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 如果有返回值为false则删除</span></span><br><span class="line">            <span class="keyword">if</span> (func() === <span class="literal">false</span>) &#123;</span><br><span class="line">                <span class="built_in">this</span>._funcList.splice(i, <span class="number">1</span>);</span><br><span class="line">                i--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            func = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>._timer = <span class="built_in">setTimeout</span>(<span class="built_in">this</span>.run, <span class="built_in">this</span>._timeStep);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 暂停</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    stop = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._isPaused = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 清除</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    clear = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._timer &amp;&amp; <span class="built_in">clearTimeout</span>(<span class="built_in">this</span>._timer);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>._timer = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">this</span>._funcList = [];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> timerMgr = <span class="keyword">new</span> TimerMgr();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// console.log() 1-10</span></span><br><span class="line">timerMgr.add(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (count &gt; <span class="number">10</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`count:: <span class="subst">$&#123;count&#125;</span>`</span>);</span><br><span class="line">    count++</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一直执行</span></span><br><span class="line">timerMgr.add(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;loop&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Code</category>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>TypeScript</tag>
       </tags>
   </entry>
   <entry>
@@ -390,7 +402,7 @@
 <li>复习(Review)：在阅读完整个章节后，复习关键点。</li>
 </ol>
 <h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
-<p>该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#49;&#55;&#53;&#56;&#x35;&#x37;&#x35;&#x39;&#54;&#x39;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#x6d;">&#49;&#55;&#53;&#56;&#x35;&#x37;&#x35;&#x39;&#54;&#x39;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#x6d;</a>]。</p>
+<p>该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#49;&#55;&#53;&#56;&#x35;&#x37;&#53;&#57;&#x36;&#57;&#x40;&#113;&#113;&#46;&#x63;&#111;&#x6d;">&#49;&#55;&#53;&#56;&#x35;&#x37;&#53;&#57;&#x36;&#57;&#x40;&#113;&#113;&#46;&#x63;&#111;&#x6d;</a>]。</p>
 <hr>
 ]]></content>
       <categories>
@@ -518,7 +530,7 @@
 <li>数字技术能更好额较少受到统计呈现形式的影响。</li>
 </ul>
 <h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
-<p>该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#49;&#55;&#53;&#x38;&#x35;&#55;&#x35;&#x39;&#54;&#57;&#x40;&#x71;&#113;&#46;&#99;&#111;&#x6d;">&#49;&#55;&#53;&#x38;&#x35;&#55;&#x35;&#x39;&#54;&#57;&#x40;&#x71;&#113;&#46;&#99;&#111;&#x6d;</a>]。</p>
+<p>该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#49;&#x37;&#x35;&#x38;&#53;&#55;&#x35;&#57;&#54;&#57;&#64;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;">&#49;&#x37;&#x35;&#x38;&#53;&#55;&#x35;&#57;&#54;&#57;&#64;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;</a>]。</p>
 <hr>
 ]]></content>
       <categories>
@@ -586,7 +598,7 @@
 <li>动作电位遵从全或无定律(all-or-none las)：动作电位的大小不受阈</li>
 </ul>
 <h2 id="突出传递"><a href="#突出传递" class="headerlink" title="突出传递"></a>突出传递</h2><h2 id="神经递质及其功能"><a href="#神经递质及其功能" class="headerlink" title="神经递质及其功能"></a>神经递质及其功能</h2><h1 id="生活中的批判性思维：“这是遗传的”是什么意思"><a href="#生活中的批判性思维：“这是遗传的”是什么意思" class="headerlink" title="生活中的批判性思维：“这是遗传的”是什么意思"></a>生活中的批判性思维：“这是遗传的”是什么意思</h1><h1 id="生物学和行为"><a href="#生物学和行为" class="headerlink" title="生物学和行为"></a>生物学和行为</h1><h2 id="对脑的窃听"><a href="#对脑的窃听" class="headerlink" title="对脑的窃听"></a>对脑的窃听</h2><h2 id="神经系统"><a href="#神经系统" class="headerlink" title="神经系统"></a>神经系统</h2><h2 id="脑结构及其功能"><a href="#脑结构及其功能" class="headerlink" title="脑结构及其功能"></a>脑结构及其功能</h2><h2 id="半球功能偏侧化"><a href="#半球功能偏侧化" class="headerlink" title="半球功能偏侧化"></a>半球功能偏侧化</h2><h2 id="内分泌系统"><a href="#内分泌系统" class="headerlink" title="内分泌系统"></a>内分泌系统</h2><h2 id="可塑性和神经发生：变化的大脑"><a href="#可塑性和神经发生：变化的大脑" class="headerlink" title="可塑性和神经发生：变化的大脑"></a>可塑性和神经发生：变化的大脑</h2><h1 id="生活中的心理学：你的大脑如何确定信任与否"><a href="#生活中的心理学：你的大脑如何确定信任与否" class="headerlink" title="生活中的心理学：你的大脑如何确定信任与否"></a>生活中的心理学：你的大脑如何确定信任与否</h1><h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
-<p>该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#55;&#53;&#x38;&#x35;&#x37;&#x35;&#x39;&#x36;&#x39;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;">&#x31;&#55;&#53;&#x38;&#x35;&#x37;&#x35;&#x39;&#x36;&#x39;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;</a>]。</p>
+<p>该文章是学习《社会心理学》的笔记，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#55;&#x35;&#x38;&#x35;&#x37;&#x35;&#57;&#x36;&#57;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#x31;&#55;&#x35;&#x38;&#x35;&#x37;&#x35;&#57;&#x36;&#57;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a>]。</p>
 <hr>
 ]]></content>
       <categories>
