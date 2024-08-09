@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>[鸟哥的Linux私房菜笔记] 第二章-主机规划与磁盘分区 | HuiGuoRou</title><meta name="keywords" content="linux,鸟哥的Linux私房菜"><meta name="author" content="HuiGuoRou"><meta name="copyright" content="HuiGuoRou"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="各硬件装置在Linux中的文件名1234567891011121314151617181920212223242526272829303132331. SCSI&#x2F;SATA&#x2F;USB硬盘   &#x2F;dev&#x2F;sd[a-p]2. USB快闪碟   &#x2F;dev&#x2F;sd[a-p](与SATA相同)3. VirtI&#x2F;O界面   &#x2F;dev&#x2F;vd[a-p](用与虚拟机内)4. 软盘驱动器   &#x2F;dev&#x2F;fd[0-7]5.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[鸟哥的Linux私房菜笔记] 第二章-主机规划与磁盘分区">
+<meta property="og:url" content="https://guitarhgr.github.io/21dbf593282a/02_%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/index.html">
+<meta property="og:site_name" content="HuiGuoRou">
+<meta property="og:description" content="各硬件装置在Linux中的文件名1234567891011121314151617181920212223242526272829303132331. SCSI&#x2F;SATA&#x2F;USB硬盘   &#x2F;dev&#x2F;sd[a-p]2. USB快闪碟   &#x2F;dev&#x2F;sd[a-p](与SATA相同)3. VirtI&#x2F;O界面   &#x2F;dev&#x2F;vd[a-p](用与虚拟机内)4. 软盘驱动器   &#x2F;dev&#x2F;fd[0-7]5.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-05-03T10:20:00.000Z">
+<meta property="article:modified_time" content="2024-08-08T03:15:07.610Z">
+<meta property="article:author" content="HuiGuoRou">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="鸟哥的Linux私房菜">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/images/logo.png"><link rel="canonical" href="https://guitarhgr.github.io/21dbf593282a/02_%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: HuiGuoRou","link":"链接: ","source":"来源: HuiGuoRou","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-08 11:15:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HuiGuoRou</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">[鸟哥的Linux私房菜笔记] 第二章-主机规划与磁盘分区</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-03T10:20:00.000Z" title="发表于 2021-05-03 18:20:00">2021-05-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-08T03:15:07.610Z" title="更新于 2024-08-08 11:15:07">2024-08-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/code/">code</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/code/linux/">linux</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/code/linux/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C/">鸟哥的Linux私房菜</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="各硬件装置在Linux中的文件名"><a href="#各硬件装置在Linux中的文件名" class="headerlink" title="各硬件装置在Linux中的文件名"></a>各硬件装置在Linux中的文件名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">1. SCSI/SATA/USB硬盘</span><br><span class="line">   /dev/sd[a-p]</span><br><span class="line"></span><br><span class="line">2. USB快闪碟</span><br><span class="line">   /dev/sd[a-p](与SATA相同)</span><br><span class="line"></span><br><span class="line">3. VirtI/O界面</span><br><span class="line">   /dev/vd[a-p](用与虚拟机内)</span><br><span class="line"></span><br><span class="line">4. 软盘驱动器</span><br><span class="line">   /dev/fd[0-7]</span><br><span class="line"></span><br><span class="line">5. 打印机</span><br><span class="line">   /dev/lp[0-2](25-针打印机)</span><br><span class="line">   /dev/usb/lp[0-15](USB界面)</span><br><span class="line"></span><br><span class="line">6. 鼠标</span><br><span class="line">   /dev/input/mouse[0-15](通用)</span><br><span class="line">   /dev/psaux(PS/2界面)</span><br><span class="line">   /dev/mouse(当前鼠标)</span><br><span class="line"></span><br><span class="line">7. CDROM/DVDROM</span><br><span class="line">   /dev/scd[0-1](通用)</span><br><span class="line">   /dev/sr[0-1](通用,CentOS较常见)</span><br><span class="line">   /dev/cdrom(当前CDROM)</span><br><span class="line"></span><br><span class="line">8. 硬盘机</span><br><span class="line">   /dev/ht0(IDE界面)</span><br><span class="line">   /dev/st0(SATA/SCSI界面)</span><br><span class="line">   /dev/tape(当前磁带)</span><br><span class="line"></span><br><span class="line">9. IDE磁盘机</span><br><span class="line">   /dev/hd[a-d](旧时系统才有)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="MSDOS-MBR-与GPT磁盘分区表-partition-table"><a href="#MSDOS-MBR-与GPT磁盘分区表-partition-table" class="headerlink" title="MSDOS(MBR)与GPT磁盘分区表(partition table)"></a>MSDOS(MBR)与GPT磁盘分区表(partition table)</h2><h4 id="为什么要分区？"><a href="#为什么要分区？" class="headerlink" title="为什么要分区？"></a>为什么要分区？</h4><ul>
+<li><p>数据安全性</p>
+<p>因为每个分区槽的数据是分开的，所以当你需要将某个分区槽的数据重整时，不会影响其他分区槽。</p>
+</li>
+<li><p>系统的效能考虑</p>
+<p>由于分区槽将数据集中在某个磁柱的区段。例如第一个分区槽位于磁柱1到100号，这样当有数据要读取自该分区槽时，磁盘只会搜寻前面1到100的磁柱范围，由于数据集中了，将有助于数据的读取速度和效能。</p>
+</li>
+</ul>
+<h4 id="MSDOS-MBR-主要启动记录区"><a href="#MSDOS-MBR-主要启动记录区" class="headerlink" title="MSDOS(MBR)主要启动记录区"></a>MSDOS(MBR)主要启动记录区</h4><p>早期的Linux系统为了兼容与Windows的磁盘，因此使用的是支持Windos的MBR(Master Boot Record，主要开机记录区)的方式来处理开机管理程序与分区表！而开机管理程序记录区与分区表则通通放在磁盘的第一个扇区，这个扇区通常是512btyes的大小(旧的磁盘扇区都是512bytes)。所以所第一个扇区512bytes会有这两个数据：</p>
+<ul>
+<li><strong>主要启动记录区(Master Boot Record, MBR)</strong>: 可以安装开机管理程序的地方，有446bytes</li>
+<li><strong>分区表(partition table)</strong>: 记录整个磁盘分区的状态，有64bytes</li>
+</ul>
+<p>由于分区表所在的区块仅有64bytes容量，因此最多仅能有四组记录区，每组记录区记录了该区段的起始与结束的磁柱号码。可以得出以下几点重要信息：</p>
+<ul>
+<li>所谓的分区只是针对那个64bytes的分布表进行设定而已</li>
+<li>硬盘默认的分区表仅能写入四组分区信息</li>
+<li>四组分区信息我们称为主要(Primary)或延伸(Extended)分区槽</li>
+<li>分区槽的最小单位通常为磁柱(cylinder)</li>
+<li>当系统要写入磁盘时，一定会参考磁盘分区表，才能针对某个分区槽进行数据的处理</li>
+</ul>
+<h4 id="MBR主要分区、延伸分区与逻辑分区的特性"><a href="#MBR主要分区、延伸分区与逻辑分区的特性" class="headerlink" title="MBR主要分区、延伸分区与逻辑分区的特性"></a>MBR主要分区、延伸分区与逻辑分区的特性</h4><ul>
+<li>主要分区与延伸分区最多可以有四笔(硬盘的限制)</li>
+<li>延伸分区最多只能有一个(操作系统的限制)</li>
+<li>逻辑分区是由延伸分区持续切割出来的分区槽</li>
+<li>作为数据存取的分区槽为主要分区与逻辑分区，能够被格式化。延伸分区无法格式化。</li>
+<li>逻辑分区的数量依操作系统而不同，在Linux系统中SATA硬盘已经可以突破63个以上的分区限制</li>
+</ul>
+<h4 id="MBR分区表的限制"><a href="#MBR分区表的限制" class="headerlink" title="MBR分区表的限制"></a>MBR分区表的限制</h4><ul>
+<li>操作系统无法抓取到2.2T以上的磁盘容量</li>
+<li>MBR仅有一个区块，若被破坏后，经常无法或很难救援。</li>
+<li>MBR内的存放开机管理程序区块仅446bytes，无法容纳较多的程序代码。</li>
+</ul>
+<h4 id="GUID-partition-table-GPT磁盘分布表"><a href="#GUID-partition-table-GPT磁盘分布表" class="headerlink" title="GUID(partition table) GPT磁盘分布表"></a>GUID(partition table) GPT磁盘分布表</h4><p>过去一个扇区大小就是512bytes，现在已经有4K的扇区设计出现。为了兼容于所有的磁盘，因此在扇区的定义上面，大多会使用所谓的逻辑区块地址(Logical Block Address, LBA)来处理。GPT将磁盘所有区块以LBA(预设为512bytes)来规划，而第一个LBA称为LBA0(从0开始编号)。</p>
+<p>与MBR仅使用第一个512bytes区块来记录不同，GPT使用了34个LBA区块来记录分区信息。GPT除了前面34个LBA之外，整个磁盘的最后33个LBA也拿来作为另一个备份。GPT的详细结构如下：</p>
+<ul>
+<li><p><strong>LBA0(MBR相容区块)</strong></p>
+<p>与MBR模式相似的，这个兼容区块也分为两个部分，一个就是和之前446bytes相似的区块，储存了第一阶段的开机管理程序。而在原本的分区表记录区内，这个兼容模式仅放入了一个特殊标志的分区，用来标识此磁盘为GPT格式之意。而不懂GPT分区表的磁盘管理程序，就不会认识这个磁盘，除非用户有特别要求要处理这个磁盘，否则该管理软件不能修改此分区信息，进一步保护了该磁盘。</p>
+</li>
+<li><p><strong>LBA1(GPT表头记录)</strong></p>
+<p>这个部分计了分区表本身的位置与大小，同时记录了备份用的GPT分区(最后34个LBA区块)放置的位置，同时放置了分区表的检验机制码(CRC32)。操作系统可以根据这个检验码来判断GPT是否正确。若有错误，还可以通过这个记录区来取得备份的GPT(磁盘最后的那个备份区块)来恢复GPT的正常运作。</p>
+</li>
+<li><p><strong>LBA2-33(实际记录分区信息处)</strong></p>
+<p>从LBA2区块开始，每个LBA都可以记录4笔分区记录，所以在默认的情况下，总共可以有[4 * 32 = 128]笔分区记录。因为每个LBA有512bytes，因此每笔记录用到128bytes的空间，除了每笔记录所需要的标识符与相关的记录之外，GPT在每笔记录中分别提供了64bits来记载开始/结束的扇区号码。因此，GPT分布表对于单一分区槽来说，他的最大容量限制就会在[2^64 * 512bytes = 263 * 1Kbytes = 233*TB = 8 ZB]</p>
+</li>
+</ul>
+<p>现在GPT分区预设可以提供多达128笔记录，而在Linux本身的核心装置记录中，针对单一磁盘来说，虽然过去最多只能道道15个分区槽，不过由于Linux kernel透过udev等方式的处理，现在Linux也已经没有这个限制了。此在，GPT分区已经没有所谓的主分区、延伸分区、逻辑分区的概念，既然每笔记录都可以独立存在，当然每个都可以视为是主分区，每个分区都可以拿来格式化使用。</p>
+<p>并不是所有的操作系统都额可以读取到GPT的磁盘格式，同时，也不是所有的硬件都可以支持GPT格式。是否能够读写GPT格式与开机的检测程序有关。</p>
+<h2 id="开机流程中的BIOS与UEFI开机检测程序"><a href="#开机流程中的BIOS与UEFI开机检测程序" class="headerlink" title="开机流程中的BIOS与UEFI开机检测程序"></a>开机流程中的BIOS与UEFI开机检测程序</h2><h4 id="开机到操作系统的流程"><a href="#开机到操作系统的流程" class="headerlink" title="开机到操作系统的流程"></a>开机到操作系统的流程</h4><ol>
+<li><strong>BIOS</strong>：开机主动执行的固件，会认识第一个可开机的装置</li>
+<li><strong>MBR</strong>：第一个开开机装置的第一个扇区内的主要启动记录区块，内含开机管理程序</li>
+<li><strong>开机管理程序(boot loader)</strong>: 一支可读取核心文件来执行的软件</li>
+<li><strong>核心文件</strong>：开始操作系统的功能…</li>
+</ol>
+<p>需要注意的第二点，如果你的分布表为GPT格式，那么BIOS也能够从LBA0的MBR兼容区块读取第一阶段的开机管理程序代码，如果你的开机管理程序不认识GPT，开机就会失败。其中开机管理程序除了可以安装在MBR之外，还可以安装在每个分区槽的启动扇区(boot sector)。</p>
+<h4 id="boot-loader的主要任务"><a href="#boot-loader的主要任务" class="headerlink" title="boot loader的主要任务"></a>boot loader的主要任务</h4><ul>
+<li><strong>提供选单</strong>: 用户可以选择不同的开机项目，这也是多重引导的重要功能</li>
+<li><strong>载入核心文件</strong>: 直接指向可开机的程序区段来开始操作系统</li>
+<li><strong>转交其他loader</strong>: 将开机管理功能转交给其他loader负责</li>
+</ul>
+<h4 id="传统BIOS与UEFI的差异"><a href="#传统BIOS与UEFI的差异" class="headerlink" title="传统BIOS与UEFI的差异"></a>传统BIOS与UEFI的差异</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>传统BIOS</th>
+<th>UEFI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>使用程序语言</td>
+<td>汇编语言</td>
+<td>C语言</td>
+</tr>
+<tr>
+<td>硬件资源控制</td>
+<td>使用中断(IRQ)管理<br />不可变的内存存取<br />不可变的输入/输出存取</td>
+<td>使用驱动程序与协议</td>
+</tr>
+<tr>
+<td>处理器运作环境<br />扩充方式</td>
+<td>16位<br />通过IRQ连结</td>
+<td>CPU保护模式<br />直接加载驱动程序</td>
+</tr>
+<tr>
+<td>第三方厂商支持</td>
+<td>较差</td>
+<td>较佳且可支持多平台</td>
+</tr>
+<tr>
+<td>图形化能力</td>
+<td>较差</td>
+<td>较佳</td>
+</tr>
+<tr>
+<td>内建简化操作系统前环境</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+</tbody></table>
+<h4 id="常见的Linux服务功能"><a href="#常见的Linux服务功能" class="headerlink" title="常见的Linux服务功能"></a>常见的Linux服务功能</h4><ul>
+<li><strong>NAT</strong>: 达成IP分享器的功能</li>
+<li><strong>SAMBA</strong>：加入网上邻居功能</li>
+<li><strong>Mail</strong>： 邮件服务器</li>
+<li><strong>Web</strong>：WWW服务器</li>
+<li><strong>DHCP</strong>：提供客户端自动获取IP的功能</li>
+<li><strong>FTP</strong>：进行网络数据的传输</li>
+</ul>
+<h2 id="重点回顾"><a href="#重点回顾" class="headerlink" title="重点回顾"></a>重点回顾</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1. 配置计算机硬件设备时，需要考虑的有[游戏机/工作机]、[效能/价格比]、[效能/消耗瓦数]、[支持度]等。</span><br><span class="line"></span><br><span class="line">2. 旧的硬件可能由于保存的问题或则是电子零件老化的问题，导致计算机系统非常容易在运作过程中出现不明的当机情况。</span><br><span class="line"></span><br><span class="line">3. 在Linux系统中，每个装置都被当成一个文件来对待，每个装置都会有装置文件名。</span><br><span class="line"></span><br><span class="line">4. 硬盘装置文件名通常分为两种，实际SATA/USB装置名为/dev/sd[a-p],而虚拟机的装置可能未/dev/vd[a-p]。</span><br><span class="line"></span><br><span class="line">5. 硬盘的第一个扇区主要记录了两个重要的信息，分别是：</span><br><span class="line">	(1)主要启动记录区(Master Boot Record, MBR): 可以安装开机管理程序的地方，有446btyes 分区表(partition table)</span><br><span class="line">	(2)记录整个硬盘分区的状态，有64bytes。</span><br><span class="line">	</span><br><span class="line">6. 硬盘的MBR分区方式中，主要与延伸分区最多可以有四个，逻辑分区的装置文件名号码，一定由5号开始。</span><br><span class="line"></span><br><span class="line">7. 如果硬盘大于2TB以上时，系统会自动使用GPT分区方式来处理硬盘分区。</span><br><span class="line"></span><br><span class="line">8. GPT分区已经没有延伸与逻辑分区槽的概念，可以想象成所有的分区都是主分区。</span><br><span class="line"></span><br><span class="line">9. 某些操作系统要使用GPT分区时，必须要搭配UEFI的新型BIOS格式才可以安装使用。</span><br><span class="line"></span><br><span class="line">10. 开始的流程：BIOS -&gt; MBR -&gt; boot loader -&gt; 核心文件。</span><br><span class="line"></span><br><span class="line">11. boot loader的功能主要有：提供选单、加载核心、转交控制权给其他loader。</span><br><span class="line"></span><br><span class="line">12. boot loader可以安装的地点有两个，分别是MBR与boot loader。</span><br><span class="line"></span><br><span class="line">13. Linux操作系统的文件使用目录树系统，与磁盘的对应需要有[挂载]的动作才行。</span><br><span class="line"></span><br><span class="line">14. 新手的简单分区，建议只要有/及swap两个分区槽即可。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="简答"><a href="#简答" class="headerlink" title="简答"></a>简答</h2><ol>
+<li><p>请分析你的家庭计算机，以你的硬件配置来计算可能才生的耗电量，最终再以计算出的总瓦数乘上你可能开机的时间，以推算出一年你可能会花费多少钱在你的这部主机上面？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">硬件里面包括CPU、硬盘、主板、内存、显示适配器、屏幕等等都会消耗电力，同时电源供应器也会消耗一部分的电力，若有实际测量工具时，请使用测量结果来计算。若无测量工具，请上网找出每个配件的最大理论消耗功率来计算。</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol start="2">
+<li><p>一部计算机主机是否只要CPU够快，整体速度就会提高？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不见得！一部计算机系统的与整体计算机系统的运作有关，每个组件皆会影响计算机的速度！这包括了内存、CPU、AGP与显示适配器速度，硬盘的速度以及其他相关的输入输出接口等等！所以，弱国您的系统是升级的，那么还得必须要注意各个旧组件是否可以保留，或者旧的可以用的组件必须要舍弃！</span><br></pre></td></tr></table></figure></li>
+<li><p>Linux对于硬件的要求需要的考虑为何？是否一定要很高的配备才能安装Linux？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux对于硬件的要求是因服务种类、服务范围及主机的角色而定的。例如一部专门用来运算数值解析的Linux运算工作照，需要比较强大的CPU与足够RAM来进行工作，至于一般家庭用的仅用来做为ADSL宽带分享器的Linux主机，则只要P-III等级的计算机，设置P—II系列的等级，旧可以很顺利的运行Linux了。</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol start="4">
+<li><p>一部好的主机在安装之前，最后先进行规划，哪些是必定需要注意的Linux主机规划事项？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux对于硬件的要求是因地制宜的，所以要进行Linux的安装之前，一定需要规划Linux主机的定位与角色！因此，Linux的主机是否开放网络服务？这部主机的未来规划中，是否需要进行大量的运算？这部主机是否需要提供很大的硬盘容量来服务客户端的使用？这部主机预计开放的网络服务内容？等等，都是需要经过考虑的，尤其未来的套件选择安装上面，更需要依据这些规划来设定。</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h1><hr>
+<p>该笔记是摘抄自《鸟哥的Linux私房菜》，仅供自己学习使用，如有侵权请联系删除[<a href="mailto:&#x31;&#x37;&#x35;&#x38;&#53;&#x37;&#53;&#57;&#x36;&#x39;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;">&#x31;&#x37;&#x35;&#x38;&#53;&#x37;&#53;&#57;&#x36;&#x39;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;</a>]。原内容来自<a target="_blank" rel="noopener" href="http://linux.vbird.org/linux_basic/0105computers.php#chipset">鸟哥的Linux私房菜</a></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">HuiGuoRou</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://guitarhgr.github.io/21dbf593282a/02_%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/">https://guitarhgr.github.io/21dbf593282a/02_%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://guitarhgr.github.io" target="_blank">HuiGuoRou</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a><a class="post-meta__tags" href="/tags/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C/">鸟哥的Linux私房菜</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/c5d058f376e6/05_Linux%E7%9A%84%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">[鸟哥的Linux私房菜笔记] 第五章-Linux的文件权限与目录配置</div></div></a></div><div class="next-post pull-right"><a href="/ac33fd961cc8/01_Linux%E6%98%AF%E4%BB%80%E4%B9%88%E4%B8%8E%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">[鸟哥的Linux私房菜笔记] 第一章-Linux是什么与如何学习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/9b2ca865585c/00_计算机概论/" title="[鸟哥的Linux私房菜笔记] 第零章-计算器概论"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-08</div><div class="title">[鸟哥的Linux私房菜笔记] 第零章-计算器概论</div></div></a></div><div><a href="/ac33fd961cc8/01_Linux是什么与如何学习/" title="[鸟哥的Linux私房菜笔记] 第一章-Linux是什么与如何学习"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-20</div><div class="title">[鸟哥的Linux私房菜笔记] 第一章-Linux是什么与如何学习</div></div></a></div><div><a href="/c5d058f376e6/05_Linux的文件权限与目录配置/" title="[鸟哥的Linux私房菜笔记] 第五章-Linux的文件权限与目录配置"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-07</div><div class="title">[鸟哥的Linux私房菜笔记] 第五章-Linux的文件权限与目录配置</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">HuiGuoRou</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/guitarhgr"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/guitarhgr" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:hongzicheng1994@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Hello Coder</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E7%A1%AC%E4%BB%B6%E8%A3%85%E7%BD%AE%E5%9C%A8Linux%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.</span> <span class="toc-text">各硬件装置在Linux中的文件名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MSDOS-MBR-%E4%B8%8EGPT%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E8%A1%A8-partition-table"><span class="toc-number">2.</span> <span class="toc-text">MSDOS(MBR)与GPT磁盘分区表(partition table)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%86%E5%8C%BA%EF%BC%9F"><span class="toc-number">2.0.1.</span> <span class="toc-text">为什么要分区？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MSDOS-MBR-%E4%B8%BB%E8%A6%81%E5%90%AF%E5%8A%A8%E8%AE%B0%E5%BD%95%E5%8C%BA"><span class="toc-number">2.0.2.</span> <span class="toc-text">MSDOS(MBR)主要启动记录区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MBR%E4%B8%BB%E8%A6%81%E5%88%86%E5%8C%BA%E3%80%81%E5%BB%B6%E4%BC%B8%E5%88%86%E5%8C%BA%E4%B8%8E%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">2.0.3.</span> <span class="toc-text">MBR主要分区、延伸分区与逻辑分区的特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MBR%E5%88%86%E5%8C%BA%E8%A1%A8%E7%9A%84%E9%99%90%E5%88%B6"><span class="toc-number">2.0.4.</span> <span class="toc-text">MBR分区表的限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GUID-partition-table-GPT%E7%A3%81%E7%9B%98%E5%88%86%E5%B8%83%E8%A1%A8"><span class="toc-number">2.0.5.</span> <span class="toc-text">GUID(partition table) GPT磁盘分布表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E6%B5%81%E7%A8%8B%E4%B8%AD%E7%9A%84BIOS%E4%B8%8EUEFI%E5%BC%80%E6%9C%BA%E6%A3%80%E6%B5%8B%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">开机流程中的BIOS与UEFI开机检测程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E5%88%B0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">3.0.1.</span> <span class="toc-text">开机到操作系统的流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#boot-loader%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-number">3.0.2.</span> <span class="toc-text">boot loader的主要任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9FBIOS%E4%B8%8EUEFI%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-number">3.0.3.</span> <span class="toc-text">传统BIOS与UEFI的差异</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84Linux%E6%9C%8D%E5%8A%A1%E5%8A%9F%E8%83%BD"><span class="toc-number">3.0.4.</span> <span class="toc-text">常见的Linux服务功能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%82%B9%E5%9B%9E%E9%A1%BE"><span class="toc-number">4.</span> <span class="toc-text">重点回顾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E7%AD%94"><span class="toc-number">5.</span> <span class="toc-text">简答</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA"><span class="toc-number"></span> <span class="toc-text">提示</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/120a5ef339a8/pgsql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/" title="PgSql常用命令速查表">PgSql常用命令速查表</a><time datetime="2024-08-07T09:42:00.000Z" title="发表于 2024-08-07 17:42:00">2024-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/387dc896a80f/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/" title="git常用命令速查表">git常用命令速查表</a><time datetime="2024-08-07T09:34:00.000Z" title="发表于 2024-08-07 17:34:00">2024-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/c5d058f376e6/05_Linux%E7%9A%84%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE/" title="[鸟哥的Linux私房菜笔记] 第五章-Linux的文件权限与目录配置">[鸟哥的Linux私房菜笔记] 第五章-Linux的文件权限与目录配置</a><time datetime="2024-08-07T03:23:00.000Z" title="发表于 2024-08-07 11:23:00">2024-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/21dbf593282a/02_%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/" title="[鸟哥的Linux私房菜笔记] 第二章-主机规划与磁盘分区">[鸟哥的Linux私房菜笔记] 第二章-主机规划与磁盘分区</a><time datetime="2021-05-03T10:20:00.000Z" title="发表于 2021-05-03 18:20:00">2021-05-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/ac33fd961cc8/01_Linux%E6%98%AF%E4%BB%80%E4%B9%88%E4%B8%8E%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/" title="[鸟哥的Linux私房菜笔记] 第一章-Linux是什么与如何学习">[鸟哥的Linux私房菜笔记] 第一章-Linux是什么与如何学习</a><time datetime="2021-02-20T12:31:00.000Z" title="发表于 2021-02-20 20:31:00">2021-02-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By HuiGuoRou</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
