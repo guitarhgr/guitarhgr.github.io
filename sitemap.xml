@@ -196,7 +196,7 @@
   </url>
   
   <url>
-    <loc>https://guitarhgr.github.io/tags/nodejS/</loc>
+    <loc>https://guitarhgr.github.io/tags/javascript/</loc>
     <lastmod>2024-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -210,7 +210,7 @@
   </url>
   
   <url>
-    <loc>https://guitarhgr.github.io/tags/javascript/</loc>
+    <loc>https://guitarhgr.github.io/tags/nodejS/</loc>
     <lastmod>2024-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -268,7 +268,7 @@
   </url>
   
   <url>
-    <loc>https://guitarhgr.github.io/categories/code/computer-graphics/</loc>
+    <loc>https://guitarhgr.github.io/categories/code/nodejs/</loc>
     <lastmod>2024-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -282,7 +282,14 @@
   </url>
   
   <url>
-    <loc>https://guitarhgr.github.io/categories/code/linux/</loc>
+    <loc>https://guitarhgr.github.io/categories/code/pgsql/</loc>
+    <lastmod>2024-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://guitarhgr.github.io/categories/code/computer-graphics/</loc>
     <lastmod>2024-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -296,7 +303,7 @@
   </url>
   
   <url>
-    <loc>https://guitarhgr.github.io/categories/code/nodejs/</loc>
+    <loc>https://guitarhgr.github.io/categories/code/linux/</loc>
     <lastmod>2024-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -310,7 +317,14 @@
   </url>
   
   <url>
-    <loc>https://guitarhgr.github.io/categories/code/pgsql/</loc>
+    <loc>https://guitarhgr.github.io/categories/code/nodejs/tools/</loc>
+    <lastmod>2024-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://guitarhgr.github.io/categories/code/pgsql/basics/</loc>
     <lastmod>2024-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -331,21 +345,7 @@
   </url>
   
   <url>
-    <loc>https://guitarhgr.github.io/categories/code/nodejs/tools/</loc>
-    <lastmod>2024-08-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://guitarhgr.github.io/categories/code/javascript/basics/</loc>
-    <lastmod>2024-08-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://guitarhgr.github.io/categories/code/pgsql/basics/</loc>
     <lastmod>2024-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
